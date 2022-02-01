@@ -1,7 +1,7 @@
 pipeline {
   agent any
   tools {
-    MAVEN_HOME '/usr/share/maven' 
+    MAVEN_HOME '3.6.3' 
   }
   stages {
     stage ('Build') {
