@@ -1,7 +1,7 @@
 pipeline {
   agent any
   tools {
-    MAVEN_HOME 'maven-3.6.3' 
+    MAVEN_HOME '/usr/share/maven' 
   }
   stages {
     stage ('Build') {
@@ -12,7 +12,7 @@ pipeline {
     stage ('Deploy') {
       steps {
         script {
-          deploy adapters: [tomcat9(credentialsId: 'tomcat', path: '', url: 'http://http://192.168.0.21:8081')], contextPath: '/pipeline', onFailure: false, war: 'webapp/target/*.war' 
+          deploy adapters: [tomcat9(credentialsId: 'tomcat', path: '', url: 'http://http://192.168.0.21:8082')], contextPath: '/pipeline', onFailure: false, war: 'webapp/target/*.war' 
         }
       }
     }
