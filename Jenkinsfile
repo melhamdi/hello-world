@@ -9,6 +9,8 @@ pipeline {
         sh 'mvn clean package'
       }
     }
+    //deploiement sur un serveur tomcat
+    
     stage ('Deploy') {
       steps {
         script {
