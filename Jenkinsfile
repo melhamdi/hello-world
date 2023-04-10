@@ -32,5 +32,10 @@ pipeline {
                 }
             }
         }
+        stage('Deploy') {
+            steps {
+                sh "docker run --name hello-world -d -p 9004:8080 $registry:${TAG}"
+            }
+        }
     }
 }
